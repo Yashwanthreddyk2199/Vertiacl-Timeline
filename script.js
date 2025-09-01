@@ -256,13 +256,25 @@
     document.body.style.overflow = 'hidden';
 
     if (mode === 'edit' && data) {
-      form.start.value = data.startYm || data.ym;  // supports old items
-form.end.value   = data.endYm || '';
-form.ongoing.checked = !!data.ongoing;
-form.end.disabled = form.ongoing.checked;
-modalTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit Timeline Entry';
-submitLabel.textContent = 'Save';
+      editingId = data.id;
+    modalTitle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit Timeline Entry';
+    submitLabel.textContent = 'Save';
 
+    // ✅ fill ALL fields
+    form.type.value   = data.type || 'project';
+
+    form.start.value  = data.startYm || data.ym || '';
+    form.end.value    = data.endYm || '';
+    form.ongoing.checked = !!data.ongoing;
+    form.end.disabled = form.ongoing.checked;
+
+    form.title.value  = data.title || '';
+    form.desc.value   = data.desc || '';
+    form.url.value    = data.url || '';
+    form.urlText.value= data.urlText || '';
+
+    // left | right | auto (fallback)
+    form.side.value   = (data.side === 'left' || data.side === 'right') ? data.side : 'auto';
 
     } else {
       modalTitle.innerHTML = '<i class="fa-solid fa-plus"></i> Add Timeline Entry';
