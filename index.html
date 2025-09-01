@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,10 +10,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="container">
     <section id="timeline-story" class="ts">
@@ -62,7 +65,8 @@
     <div class="modal-card" role="document">
       <header class="modal-header">
         <h2 id="entryModalTitle"><i class="fa-solid fa-plus"></i> Add Timeline Entry</h2>
-        <button class="modal-close" title="Close" aria-label="Close" data-close><i class="fa-solid fa-xmark"></i></button>
+        <button class="modal-close" title="Close" aria-label="Close" data-close><i
+            class="fa-solid fa-xmark"></i></button>
       </header>
 
       <form id="entry-form" autocomplete="on">
@@ -77,9 +81,20 @@
           </label>
 
           <label>
-            <span>Date</span>
-            <input name="date" type="month" required />
+            <span>Start month</span>
+            <input name="start" type="month" required />
           </label>
+
+          <label>
+            <span>End month</span>
+            <input name="end" type="month" />
+          </label>
+
+          <label class="inline">
+            <input type="checkbox" name="ongoing" id="ongoing" />
+            <span>Ongoing (Present)</span>
+          </label>
+
 
           <label>
             <span>Title</span>
@@ -123,4 +138,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>
