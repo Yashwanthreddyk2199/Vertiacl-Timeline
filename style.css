@@ -56,9 +56,17 @@ body {
 @media (max-width:900px){ .ts-rail{ left:40px; transform:none; } }
 
 /* Empty state */
-.ts-empty{
-  display:grid; place-items:center; padding:2rem 0 2.5rem;
+/* Empty state (hidden by default; only show when timeline is empty) */
+.ts-empty{ 
+  display:none; 
+  place-items:center; 
+  padding:2rem 0 2.5rem;
 }
+.ts-entries.is-empty .ts-empty{ 
+  display:grid; 
+}
+
+ /* (keep the rest of your .ts-empty-card styles as-is) */
 .ts-empty-card{
   text-align:center; background:#fff; border:1px dashed #ddd; padding:2rem 1.5rem; border-radius:18px;
   box-shadow:0 10px 30px rgba(0,0,0,.05);
@@ -203,3 +211,6 @@ input[type="text"], input[type="url"], input[type="month"], select, textarea{
 }
 textarea{ resize:vertical; }
 .modal-footer{ display:flex; justify-content:flex-end; gap:.75rem; padding:1rem 0 .25rem; }
+
+
+#entry-form .inline{ display:flex; align-items:center; gap:.5rem; margin-top:.25rem; }

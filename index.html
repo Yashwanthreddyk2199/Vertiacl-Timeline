@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,22 +10,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="container">
     <section id="timeline-story" class="ts">
       <header class="ts-hero">
         <h1>My Work, As It Happened</h1>
-        <p class="ts-sub">Roles, releases, projects, and awards—on one vertical timeline.</p>
+        <p class="ts-sub">Roles, projects, and awards—on one vertical timeline.</p>
 
         <div class="ts-actions">
           <div class="ts-filters" role="group" aria-label="Filter timeline">
             <button data-filter="all" class="is-active">All</button>
             <button data-filter="role">Role</button>
-            <button data-filter="release">Release</button>
             <button data-filter="project">Project</button>
             <button data-filter="award">Award</button>
           </div>
@@ -47,7 +49,7 @@
           <div class="ts-empty-card">
             <i class="fa-solid fa-timeline"></i>
             <h3>Your timeline is empty</h3>
-            <p>Click <strong>Add Entry</strong> to create your first role, release, project, or award.</p>
+            <p>Click <strong>Add Entry</strong> to create your first role, project, or award.</p>
             <button id="empty-add" class="btn-primary"><i class="fa-solid fa-plus"></i> Add Entry</button>
           </div>
         </div>
@@ -63,7 +65,8 @@
     <div class="modal-card" role="document">
       <header class="modal-header">
         <h2 id="entryModalTitle"><i class="fa-solid fa-plus"></i> Add Timeline Entry</h2>
-        <button class="modal-close" title="Close" aria-label="Close" data-close><i class="fa-solid fa-xmark"></i></button>
+        <button class="modal-close" title="Close" aria-label="Close" data-close><i
+            class="fa-solid fa-xmark"></i></button>
       </header>
 
       <form id="entry-form" autocomplete="on">
@@ -73,15 +76,25 @@
             <select name="type" required>
               <option value="project">Project</option>
               <option value="role">Role</option>
-              <option value="release">Release</option>
               <option value="award">Award</option>
             </select>
           </label>
 
           <label>
-            <span>Date</span>
-            <input name="date" type="month" required />
+            <span>Start month</span>
+            <input name="start" type="month" required />
           </label>
+
+          <label>
+            <span>End month</span>
+            <input name="end" type="month" />
+          </label>
+
+          <label class="inline">
+            <input type="checkbox" name="ongoing" id="ongoing" />
+            <span>Ongoing (Present)</span>
+          </label>
+
 
           <label>
             <span>Title</span>
@@ -125,4 +138,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>
